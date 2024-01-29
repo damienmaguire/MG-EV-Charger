@@ -49,3 +49,5 @@ Up to 21k of resistance from 12v to this pin will maintain 0x64. At 22k byte 0 c
 Seems to be 1 second between state chages on this byte.
 In logs from a charging vehicle we see byte 0 go from 0x00 , 06x4 and then ramp down to 0x36 during charge. On my bench charger, with no connection to pin 11 I get 0x00 to 0x64 and then back to 0x00 only.
 
+Charger responds to ID 0x784 on diag can with ID 0x78C. See log.
+
