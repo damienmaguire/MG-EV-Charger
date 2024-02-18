@@ -60,3 +60,29 @@ More explanation in video coming soon.
 CAN : One ID required. 0x29C on 100ms time. No counters or crc. Uploaded a log to run the charger for a few seconds in SavvyCAN format as well as a super crude program for the Arduino DUE.
 
 Charger control will be integrated with ZombieVerter VCU in the very near future.
+
+What I know so far:
+
+0x29c : Byte 0 is max current. e.g. 0x08 = 2A dc.
+
+    Setting byte 1 to 0x08 will call in the evse
+    
+    Byte 2 is usually 24 at start and lsb seems to be the 9th bit of current request in byte 3.
+    
+    Byte 3 is current request. 20 decimal seems to be 1A on DC side.
+    
+    Byte 4 always 0x00.
+    
+    Byte 5 starts at 0x00 then goes to 0x8C at same time as byte 2 when startup commanded
+    
+    Byte 6 starts at 0x00 then goes to 0x5A at same time as byte 2 when startup commanded
+    
+    Byte 7 starts at 0x00 then goes to 0x3C at same time as byte 2 when startup commanded
+    
+Charger does not care when HVDC is applied.
+
+If locks up due to an error a simple 12v power cycle will reset.
+
+Charger will wake with ANY can id on local can and will wake on evse plug insert.
+
+
