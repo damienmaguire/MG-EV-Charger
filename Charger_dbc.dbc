@@ -33,17 +33,20 @@ NS_ :
 
 BS_: 
 BU_: OBC 
-BO_ 2147484600 OBCMsg3B8: 8 OBC
-   SG_ HVVolts : 47|16@0+ (0.02,0) [0|1000] "Volts" Vector__XXX
+BO_ 952 OBCMsg3B8: 8 OBC
    SG_ ACVolts : 23|8@0+ (2,0) [0|255] "Volts" Vector__XXX
-   SG_ AC_Amps : 15|8@0+ (0.2,0) [0|35] "" Vector__XXX
+   SG_ AC_Amps : 15|8@0+ (0.25,0) [0|35] "" Vector__XXX
+   SG_ CP_PWM : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+   SG_ DC_Amps : 32|8@1+ (0.05,0) [0|50] "Amps" Vector__XXX
 
 BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
 BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
 BA_DEF_ BO_ "matchingcriteria" INT 0 0;
 BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "isj1939dbc" INT 0 0;
 BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
 BA_DEF_DEF_ "GenMsgForegroundColor" "#000000";
 BA_DEF_DEF_ "matchingcriteria" 0;
 BA_DEF_DEF_ "filterlabeling" 1;
-BA_ "GenMsgForegroundColor" BO_ 2147484600 "#000000";
+BA_DEF_DEF_ "isj1939dbc" 0;
+VAL_ 952 CP_PWM 100 "Static_Pilot";
