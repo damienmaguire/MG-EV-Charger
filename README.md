@@ -51,3 +51,12 @@ In logs from a charging vehicle we see byte 0 go from 0x00 , 06x4 and then ramp 
 
 Charger responds to ID 0x784 on diag can with ID 0x78C. See log.
 
+18/02/24 : Success at last. Charger now running on the bench. 
+
+Requirements to run: +12v , GND, Local can, charge port temp sensors bypassed with 2 x 100k resistors. CP connection to bottom middle pin of AC input plug. This is NOT a HVIL as I had thought.
+
+More explanation in video coming soon.
+
+CAN : One ID required. 0x29C on 100ms time. No counters or crc. Uploaded a log to run the charger for a few seconds in SavvyCAN format as well as a super crude program for the Arduino DUE.
+
+Charger control will be integrated with ZombieVerter VCU in the very near future.
