@@ -83,6 +83,15 @@ Charger does not care when HVDC is applied.
 
 If locks up due to an error a simple 12v power cycle will reset.
 
-Charger will wake with ANY can id on local can and will wake on evse plug insert.
+
+13/03/24 : Gen 2 charger with built in DCDC converter and V2L capability now working on the bench.
+
+DCDC Converter Requires CAN Ids : 0x19C and 0x1F1 on PT CAN
+
+For V2L : 0x297 and 0x33F
+
+For Charging : 0x297 , 0x29B , 0x29C , 0x32E , 0x343 , 0x348, 0x394 , 0x396 , 0x39A , 0x39B
+
+
 
 
